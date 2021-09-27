@@ -18,8 +18,14 @@ public class MainActivity extends AppCompatActivity {
         listaButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(this, GameListActivity.class);
+                goToLista();
             }
         });
     }
+
+    public void goToLista(){
+        Intent intent = new Intent(this, GameListActivity.class);
+        startActivity(intent);
+    }
+
 }
