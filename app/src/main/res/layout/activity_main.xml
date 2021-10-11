@@ -21,15 +21,15 @@
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gifImageView"
-        android:layout_width="170dp"
-        android:layout_height="155dp"
+        android:layout_width="138dp"
+        android:layout_height="129dp"
         android:src="@drawable/liekki"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.572" />
+        app:layout_constraintVertical_bias="0.633" />
 
     <ImageButton
         android:id="@+id/ilmoitusnappi"
@@ -50,10 +50,10 @@
 
     <ImageButton
         android:id="@+id/button_lista"
-        android:layout_width="127dp"
-        android:layout_height="94dp"
+        android:layout_width="170dp"
+        android:layout_height="144dp"
         android:backgroundTint="#00FFFFFF"
-        android:scaleType="centerCrop"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
