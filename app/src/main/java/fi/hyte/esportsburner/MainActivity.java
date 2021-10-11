@@ -4,16 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-import android.app.Notification;
+import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.content.Context;
+import android.app.PendingIntent;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -23,55 +22,45 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        createNotificationChannel();
+
 
         nappi = (ImageButton) findViewById(R.id.ilmoitusnappi);
         nappi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showNotification();
+                Toast.makeText(getApplicationContext(), "Ilmoitus luotu!", Toast.LENGTH_SHORT).show();
+
+
+                Intent intent = new Intent(MainActivity.this, Notification.class);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this,0,intent,0);
+
+                AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+                long napinpainaminen = System.currentTimeMillis();
+                long tunti = 1000 * 10;
+
+                alarmManager.set(AlarmManager.RTC_WAKEUP, napinpainaminen + tunti, pendingIntent);
 
             }
         });
 
 
-        Kellotin kellotin = new Kellotin(this);
-        kellotin.cancelAlarmManager();
-        kellotin.setAlarmManager();
 
-        ImageButton listaButton = findViewById(R.id.button_lista);
-        listaButton.setOnClickListener(new View.OnClickListener() {
-            @Override
 
-            public void onClick(View view) {
-                goToLista();
-            }
-        });
     }
 
-    private void showNotification() {
+    private void createNotificationChannel() {
+        String nimi = "ville";
+        String sisältö = "Channelville";
+        int tärkeys = NotificationManager.IMPORTANCE_DEFAULT;
+        NotificationChannel kanava = new NotificationChannel("ville", nimi, tärkeys);
+        kanava.setDescription(sisältö);
 
-        String id = "main_channel";
-        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        CharSequence nimi = "eSportsBurner";
-        String sisalto = "MUISTA PELATA!";
-        int tärkeys = NotificationManager.IMPORTANCE_HIGH;
-        NotificationChannel notificationChannel = new NotificationChannel(id, nimi, tärkeys);
-        notificationChannel.setDescription(sisalto);
-        notificationChannel.enableLights(true);
-        notificationChannel.setLightColor(Color.WHITE);
-        notificationChannel.enableVibration(true);
-        if(notificationManager != null) {
-            notificationManager.createNotificationChannel(notificationChannel);
-        }
-        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, id);
-        notificationBuilder.setSmallIcon(R.mipmap.ic_launcher);
-        notificationBuilder.setContentTitle("eSportsBurner");
-        notificationBuilder.setContentText("MUISTA PELATA!");
-        notificationBuilder.setLights(Color.WHITE, 500, 5000);
-        notificationBuilder.setColor(Color.BLUE);
-        notificationBuilder.setDefaults(Notification.DEFAULT_SOUND);
-        NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
-        notificationManagerCompat.notify(1000, notificationBuilder.build());
+        NotificationManager nm = getSystemService(NotificationManager.class);
+        nm.createNotificationChannel(kanava);
+
+
 
     }
 
