@@ -9,6 +9,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         createNotificationChannel();
 
+        ImageButton listaButton = findViewById(R.id.button_lista);
+        listaButton.setOnClickListener(view -> goToLista());
 
         nappi = (ImageButton) findViewById(R.id.ilmoitusnappi);
         nappi.setOnClickListener(new View.OnClickListener() {
