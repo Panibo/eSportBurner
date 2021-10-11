@@ -1,0 +1,24 @@
+Index: .idea/assetWizardSettings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/assetWizardSettings.xml b/.idea/assetWizardSettings.xml
+--- a/.idea/assetWizardSettings.xml	(date 1633952369430)
++++ b/.idea/assetWizardSettings.xml	(date 1633952369430)
+@@ -1,0 +1,14 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="WizardSettings">
++    <option name="children">
++      <map>
++        <entry key="imageWizard">
++          <value>
++            <PersistentState />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
