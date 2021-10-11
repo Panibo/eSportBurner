@@ -3,14 +3,27 @@ package fi.hyte.esportsburner;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Singleton listan luomista varten
+ * @author Miro Mariapori
+ */
 public class Global {
+    /**
+     * Tallentaa instanssin
+     */
     private static  final Global ourInstance = new Global();
-
-    private List<Game> lista;
+    /**
+     * Tallentaa listan
+     */
+    private final List<Game> lista;
     public static Global getInstance(){
         return  ourInstance;
     }
 
+
+    /**
+     * Luo listan
+     */
     private Global(){
         lista = new ArrayList<>();
 
@@ -25,6 +38,9 @@ public class Global {
 
     }
 
+    /**
+     * @return palauttaa listan
+     */
     public  List<Game> getGames(){
         return lista;
     }
