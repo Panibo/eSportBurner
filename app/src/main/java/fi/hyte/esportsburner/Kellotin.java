@@ -7,7 +7,7 @@ import android.content.Intent;
 
 public class Kellotin {
 
-    private Context context;
+    private final Context context;
     public Kellotin(Context context) {
         this.context = context;
     }
