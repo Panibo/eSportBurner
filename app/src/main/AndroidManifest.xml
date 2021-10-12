@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name=".ProfiiliActivity"
+            android:name=".GameActivity"
             android:exported="true" />
         <activity
-            android:name=".GameDataActivity"
+            android:name=".ProfiiliActivity"
             android:exported="true" />
         <activity
             android:name=".GameListActivity"

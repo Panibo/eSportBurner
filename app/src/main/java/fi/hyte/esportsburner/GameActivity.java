@@ -13,6 +13,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
+
 /**
  * Aktiviteetti joka näyttää käyttäjälle valitsemansa pelin tallennetut tiedot
  * ja josta hän pystyy myös muokata pelattua tuntimäärää
@@ -20,7 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
  * @author Miro Mariapori
  */
 
-public class GameDataActivity extends AppCompatActivity {
+public class GameActivity extends AppCompatActivity {
     /**
      * Tallentaa paikallisesti pelin nimen
      */
@@ -43,7 +45,7 @@ public class GameDataActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_data);
+        setContentView(R.layout.activity_game);
 
         TextView nimiView = findViewById(R.id.nimiView);
         ImageView gameView = findViewById(R.id.gameImage);
@@ -52,7 +54,6 @@ public class GameDataActivity extends AppCompatActivity {
         nimi = intent.getStringExtra("NIMI");
 
         kaloritTunnissa = kokonaisKalorit(intent.getIntExtra("KALORIT", 0));
-        Log.d("TN", String.valueOf(kaloritTunnissa));
         nimiView.setText(nimi);
         gameView.setImageResource(intent.getIntExtra("KUVA", R.drawable.eikuvaa));
 

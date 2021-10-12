@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">eSports Burner</string>
+    <string name="poltetut">Poltetut kalorit</string>
+    <string name="pelatut">Pelatut tunnit</string>
+    <string name="lisaa">Lisää</string>
+    <string name="annapaino">Anna painosi (kg):</string>
+    <string name="painohint">Paino...</string>
 </resources>

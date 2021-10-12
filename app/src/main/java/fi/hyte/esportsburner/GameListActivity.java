@@ -32,7 +32,7 @@ public class GameListActivity extends AppCompatActivity {
                 Global.getInstance().getGames()));
 
         lv.setOnItemClickListener((adapterView, view, i, l) -> {
-            Intent nextActivity = new Intent(GameListActivity.this, GameDataActivity.class);
+            Intent nextActivity = new Intent(GameListActivity.this, GameActivity.class);
             nextActivity.putExtra("NIMI", Global.getInstance().getGames().get(i).toString());
             nextActivity.putExtra("KUVA", Global.getInstance().getGames().get(i).getImageid());
             nextActivity.putExtra("KALORIT", Global.getInstance().getGames().get(i).getKalorit());

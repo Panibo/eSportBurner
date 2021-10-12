@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
+/** Aktiviteetti josta käyttäjä voi tallentaa painonsa
+ * @author Miro Mariapori
+ */
 public class ProfiiliActivity extends AppCompatActivity {
 
     @Override
@@ -18,6 +21,9 @@ public class ProfiiliActivity extends AppCompatActivity {
         tallennaButton.setOnClickListener(view -> tallenna());
     }
 
+    /**
+     * Tallentaa tiedto preferenssiin
+     */
     private void tallenna(){
         EditText editText = findViewById(R.id.editPaino);
         if(editText.getText().toString().matches("")){
