@@ -1,0 +1,17 @@
+Index: app/src/main/java/fi/hyte/esportsburner/MainActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/fi/hyte/esportsburner/MainActivity.java b/app/src/main/java/fi/hyte/esportsburner/MainActivity.java
+--- a/app/src/main/java/fi/hyte/esportsburner/MainActivity.java	(date 1633969644284)
++++ b/app/src/main/java/fi/hyte/esportsburner/MainActivity.java	(date 1633969644284)
+@@ -38,7 +38,7 @@
+                 AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+ 
+                 long napinpainaminen = System.currentTimeMillis();
+-                long tunti = 1000 * 10;
++                long tunti = 1000 * 60 * 60 ;
+ 
+                 alarmManager.set(AlarmManager.RTC_WAKEUP, napinpainaminen + tunti, pendingIntent);
+ 

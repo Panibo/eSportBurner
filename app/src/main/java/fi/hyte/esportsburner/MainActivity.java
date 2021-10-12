@@ -1,8 +1,7 @@
 package fi.hyte.esportsburner;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
+
 
 import android.app.AlarmManager;
 import android.app.NotificationChannel;
@@ -15,7 +14,13 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+/**
+ * @author Ville
+ * Tämä
+ */
+
 public class MainActivity extends AppCompatActivity {
+
 
     ImageButton nappi;
 
@@ -23,20 +28,47 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        /**
+         * Metodi, joka auttaa luomaan ilmoitus kanavan.
+         */
         createNotificationChannel();
+
+        /**
+         * Tässä etsitään button_lista nappi id:n avulla ja asetetaan onclick listener.
+         * Nappia painamalla päästään GameListActivityyn.
+         */
 
         ImageButton listaButton = findViewById(R.id.button_lista);
         listaButton.setOnClickListener(view -> goToLista());
+
+        /**
+         * Luodaan toinen nappi, joka etsitään id:n avulla.
+         * Asetetaan onclick listener, joka toteutuu, kun käyttäjä painaa kyseistä nappia.
+         */
 
         nappi = (ImageButton) findViewById(R.id.ilmoitusnappi);
         nappi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                /**
+                 * Toast komento tapahtuu, kun nappia painetaan.
+                 * Ruudulle tulee teksti "ilmoitus luotu!" nappia painamalla.
+                 */
+
                 Toast.makeText(getApplicationContext(), "Ilmoitus luotu!", Toast.LENGTH_SHORT).show();
 
+                /**
+                 * Intent on toiminnan käynnistämisen koodi, joka tässä luodaan.
+                 * Luo aktiviteetin.
+                 */
 
                 Intent intent = new Intent(MainActivity.this, Notification.class);
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(MainActivity.this,0,intent,0);
+
+                /**
+                 * Ajastin, joka laskee 10 sekunttia painamisesta, jonka jälkeen ilmoitus käynnistyy.
+                 */
 
                 AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
@@ -53,6 +85,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Ilmoituskanava, jonka avulla ilmoitus tulee käyttäjällä näkyviin.
+     */
     private void createNotificationChannel() {
         String nimi = "ville";
         String sisältö = "Channelville";
@@ -67,7 +102,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     *
+     */
 
     public void goToLista(){
         Intent intent = new Intent(this, GameListActivity.class);
