@@ -12,8 +12,8 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 /**
- * @author Ville
- * Tämä
+ *
+ *
  */
 
 public class MainActivity extends AppCompatActivity {
