@@ -16,8 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gameImage"
-        app:layout_constraintVertical_bias="0.05
-" />
+        app:layout_constraintVertical_bias="0.05" />
 
     <EditText
         android:id="@+id/editTunnit"
@@ -119,5 +118,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_lisaa"
-        app:srcCompat="@drawable/reset" />
+        app:srcCompat="@drawable/reset"
+        tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>

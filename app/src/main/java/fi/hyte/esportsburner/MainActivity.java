@@ -1,14 +1,11 @@
 package fi.hyte.esportsburner;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-
 import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -40,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
 
         ImageButton listaButton = findViewById(R.id.button_lista);
         listaButton.setOnClickListener(view -> goToLista());
+
+
+        ImageButton profiiliButton = findViewById(R.id.button_profiili);
+        profiiliButton.setOnClickListener(view -> goToProfiili());
 
         /**
          * Luodaan toinen nappi, joka etsitään id:n avulla.
@@ -103,15 +104,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * Aloittaa aktiviteetin GameListActivity
      */
 
-    public void goToLista(){
+    private void goToLista(){
         Intent intent = new Intent(this, GameListActivity.class);
         startActivity(intent);
     }
 
-
+    /**
+     * Aloittaa aktiviteetin ProfiiliActivity
+     */
+    private void goToProfiili(){
+        Intent intent = new Intent(this, ProfiiliActivity.class);
+        startActivity(intent);
+    }
 
 
 
