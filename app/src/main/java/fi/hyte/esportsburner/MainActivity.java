@@ -1,14 +1,11 @@
 package fi.hyte.esportsburner;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-
 import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -107,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * Aloittaa aktiviteetin GameListActivity
      */
 
     private void goToLista(){
@@ -115,6 +112,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     * Aloittaa aktiviteetin ProfiiliActivity
+     */
     private void goToProfiili(){
         Intent intent = new Intent(this, ProfiiliActivity.class);
         startActivity(intent);

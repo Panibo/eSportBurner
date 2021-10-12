@@ -1,5 +1,8 @@
 package fi.hyte.esportsburner;
 
+import android.app.Activity;
+import android.content.SharedPreferences;
+
 /**
  * Luokka joka sisältää pelin tarvitsemat tiedot
  * @author Miro

@@ -1,21 +1,22 @@
 package fi.hyte.esportsburner;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 /**
  * Aktiviteetti joka näyttää käyttäjälle valitsemansa pelin tallennetut tiedot
  * ja josta hän pystyy myös muokata pelattua tuntimäärää
+ *
  * @author Miro Mariapori
  */
 
@@ -36,6 +37,7 @@ public class GameDataActivity extends AppCompatActivity {
 
     /**
      * Luo aktiviteetin
+     *
      * @param savedInstanceState
      */
     @Override
@@ -48,7 +50,9 @@ public class GameDataActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         nimi = intent.getStringExtra("NIMI");
-        kaloritTunnissa = intent.getIntExtra("KALORIT", 0);
+
+        kaloritTunnissa = kokonaisKalorit(intent.getIntExtra("KALORIT", 0));
+        Log.d("TN", String.valueOf(kaloritTunnissa));
         nimiView.setText(nimi);
         gameView.setImageResource(intent.getIntExtra("KUVA", R.drawable.eikuvaa));
 
@@ -64,34 +68,52 @@ public class GameDataActivity extends AppCompatActivity {
     /**
      * Asettaa pelatut tunnit ja poltetut kalorit käyttäjälle näkyviin
      */
-    private void setTeksti(){
+    private void setTeksti() {
         TextView kaloriView = findViewById(R.id.kaloriView);
         TextView tuntiView = findViewById(R.id.tuntiView);
         tuntiView.setText(String.valueOf(tunnit));
-        kaloriView.setText(String.valueOf(tunnit*kaloritTunnissa));
+        kaloriView.setText(String.valueOf(tunnit * kaloritTunnissa));
     }
 
     /**
      * Hakee tallennetusta preferenssistä aikaisemmat tiedot
+     *
      * @return palauttaa aikaisemmat pelatut tunnit
      */
-    private int getPreviousData(){
+    private int getPreviousData() {
 
-        SharedPreferences prefGet = getSharedPreferences(nimi ,Activity.MODE_PRIVATE);
+        SharedPreferences prefGet = getSharedPreferences(nimi, Activity.MODE_PRIVATE);
         return prefGet.getInt("TUNNIT", 0);
 
     }
-    private void reset(){
+
+    /**
+     * Resetoi pelatut tunnit
+     */
+    private void reset() {
         tunnit = 0;
         setTeksti();
     }
 
     /**
+     * Laskee kokonaiskalorit tunnissa painon mukaan
+     *
+     * @param kalorit kalorit tunnissa ilman painoa
+     * @return palauttaa kokonaiskalorit tunnissa
+     */
+    private int kokonaisKalorit(int kalorit) {
+        SharedPreferences prefGet = getSharedPreferences("PROFIILI", Activity.MODE_PRIVATE);
+        int paino = prefGet.getInt("PAINO", 75);
+        double kaloritT = (kalorit * paino * 3.5) / 200;
+        return (int) Math.round(kaloritT);
+    }
+
+    /**
      * Lisää käyttäjän antamat tunnit paikalliseen muuttujaan
      */
-    private void lisaa(){
+    private void lisaa() {
         EditText editText = findViewById(R.id.editTunnit);
-        if(editText.getText().toString().matches("")){
+        if (editText.getText().toString().matches("")) {
             return;
         }
         tunnit += Integer.parseInt(String.valueOf(editText.getText()));
