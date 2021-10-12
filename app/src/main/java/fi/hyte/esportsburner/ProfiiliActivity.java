@@ -20,11 +20,14 @@ public class ProfiiliActivity extends AppCompatActivity {
     }
 
     private void tallenna(){
-        EditText editText = findViewById(R.id.editTunnit);
-
+        EditText editText = findViewById(R.id.editPaino);
+        if(editText.getText().toString().matches("")){
+            return;
+        }
         SharedPreferences prefPut = getSharedPreferences("PROFIILI", Activity.MODE_PRIVATE);
         SharedPreferences.Editor prefEditor = prefPut.edit();
         prefEditor.putInt("PAINO", Integer.parseInt(String.valueOf(editText.getText())));
         prefEditor.commit();
+        editText.setText("");
     }
 }

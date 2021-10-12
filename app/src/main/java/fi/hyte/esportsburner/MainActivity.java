@@ -41,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
         ImageButton listaButton = findViewById(R.id.button_lista);
         listaButton.setOnClickListener(view -> goToLista());
 
+
+        ImageButton profiiliButton = findViewById(R.id.button_profiili);
+        profiiliButton.setOnClickListener(view -> goToProfiili());
+
         /**
          * Luodaan toinen nappi, joka etsitään id:n avulla.
          * Asetetaan onclick listener, joka toteutuu, kun käyttäjä painaa kyseistä nappia.
@@ -111,7 +115,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
+    private void goToProfiili(){
+        Intent intent = new Intent(this, ProfiiliActivity.class);
+        startActivity(intent);
+    }
 
 
 
