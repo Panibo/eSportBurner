@@ -29,7 +29,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.633" />
+        app:layout_constraintVertical_bias="0.59" />
 
     <ImageButton
         android:id="@+id/ilmoitusnappi"
@@ -61,5 +61,19 @@
         app:layout_constraintVertical_bias="0.861"
         app:srcCompat="@drawable/logomain"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/button_profiili"
+        android:layout_width="103dp"
+        android:layout_height="74dp"
+        android:backgroundTint="#00FFFFFF"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.948"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.955"
+        app:srcCompat="@drawable/profiilinappi" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
