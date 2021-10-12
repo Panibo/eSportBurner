@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void goToLista(){
+    private void goToLista(){
         Intent intent = new Intent(this, GameListActivity.class);
         startActivity(intent);
     }
