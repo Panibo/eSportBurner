@@ -33,7 +33,7 @@ public class Notification extends BroadcastReceiver {
 
         /**
          * ilmoitukselle on luotava channel, jonka avulla ilmoitus tulee näkyviin.
-         *Kun
+         *From metodi hakee komennon (napin painaminen) ja lähettää ilmoituksen kännykkään.
          */
 
 
