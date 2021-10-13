@@ -12,8 +12,10 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 /**
- *
- *
+ * @author Ville
+ * Activity, jonka avulla päästään listanäkymään.
+ * Tässä myös päästään profiili aktiviteettiin napilla.
+ * Voidaan laatia ilmoitus nappia painamalla.
  */
 
 public class MainActivity extends AppCompatActivity {
@@ -88,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Ilmoituskanava, jonka avulla ilmoitus tulee käyttäjällä näkyviin.
+     * pitää olla tässä android versiossa, muuten ei toimi
      */
     private void createNotificationChannel() {
         String nimi = "ville";

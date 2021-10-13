@@ -9,13 +9,14 @@ import androidx.core.app.NotificationManagerCompat;
 /**
  * @author Ville
  * aktiviteetti, jossa on ilmoituksen rakentaja.
- *
+ *broadcastreceiver luokka
  */
 
 public class Notification extends BroadcastReceiver {
     @Override
     /**
      * Menetelmä kun BroadcastReceiver vastaanottaa intent koodin.
+     * Eli, kun nappia painetaan notification rakentuu.
      */
     public void onReceive(Context context, Intent intent) {
 
