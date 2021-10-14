@@ -26,13 +26,17 @@ public class ProfiiliActivity extends AppCompatActivity {
      */
     private void tallenna(){
         EditText editText = findViewById(R.id.editPaino);
-        if(editText.getText().toString().matches("")){
+        if(editText.getText().length() > 3 || editText.getText().toString().matches("")){
+            editText.setText("");
             return;
         }
-        SharedPreferences prefPut = getSharedPreferences("PROFIILI", Activity.MODE_PRIVATE);
-        SharedPreferences.Editor prefEditor = prefPut.edit();
-        prefEditor.putInt("PAINO", Integer.parseInt(String.valueOf(editText.getText())));
-        prefEditor.commit();
+        if(Integer.parseInt(String.valueOf(editText.getText())) >= 30 && Integer.parseInt(String.valueOf(editText.getText())) <= 500) {
+            SharedPreferences prefPut = getSharedPreferences("PROFIILI", Activity.MODE_PRIVATE);
+            SharedPreferences.Editor prefEditor = prefPut.edit();
+            prefEditor.putInt("PAINO", Integer.parseInt(String.valueOf(editText.getText())));
+            prefEditor.commit();
+        }
         editText.setText("");
+        return;
     }
 }

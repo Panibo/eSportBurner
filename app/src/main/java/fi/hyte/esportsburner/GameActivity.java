@@ -114,11 +114,16 @@ public class GameActivity extends AppCompatActivity {
      */
     private void lisaa() {
         EditText editText = findViewById(R.id.editTunnit);
-        if (editText.getText().toString().matches("")) {
+        if(editText.getText().length() > 4 || editText.getText().toString().matches("")){
+            editText.setText("");
             return;
         }
-        tunnit += Integer.parseInt(String.valueOf(editText.getText()));
-        setTeksti();
+        int t = Integer.parseInt(String.valueOf(editText.getText()));
+
+        if(t >= 1 && t <= 5000){
+            tunnit += Integer.parseInt(String.valueOf(editText.getText()));
+            setTeksti();
+        }
         editText.setText("");
     }
 
