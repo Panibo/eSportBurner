@@ -7,9 +7,9 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 /**
- * @author Ville
  * aktiviteetti, jossa on ilmoituksen rakentaja.
  *broadcastreceiver luokka
+ * @author Ville Varhala
  */
 
 public class Notification extends BroadcastReceiver {

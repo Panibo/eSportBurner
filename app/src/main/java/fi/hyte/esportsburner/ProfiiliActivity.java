@@ -22,7 +22,7 @@ public class ProfiiliActivity extends AppCompatActivity {
     }
 
     /**
-     * Tallentaa tiedto preferenssiin
+     * Tallentaa tiedot preferenssiin
      */
     private void tallenna(){
         EditText editText = findViewById(R.id.editPaino);

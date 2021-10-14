@@ -38,3 +38,26 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
 
 }
+android.applicationVariants.all { variant ->
+    task("generate${variant.name.capitalize()}Javadoc", type: Javadoc) {
+        description "Generates Javadoc for $variant.name."
+
+        source = variant.javaCompile.source
+
+        //tiedostosijainti
+        destinationDir = file("$projectDir/javadoc/")
+
+        //public jäsenet
+        options.memberLevel = JavadocMemberLevel.PUBLIC
+
+        //äöå kirjaimet
+        options.encoding = 'UTF-8'
+
+        failOnError false
+
+        doFirst {
+            ext.androidJar = "${android.sdkDirectory}/platforms/${android.compileSdkVersion}/android.jar"
+            classpath = files(variant.javaCompile.classpath.files) + files(ext.androidJar)
+
+        }
+    }}

@@ -12,10 +12,10 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 /**
- * @author Ville
  * Activity, jonka avulla päästään listanäkymään.
  * Tässä myös päästään profiili aktiviteettiin napilla.
  * Voidaan laatia ilmoitus nappia painamalla.
+ * @author Ville Varhala
  */
 
 public class MainActivity extends AppCompatActivity {

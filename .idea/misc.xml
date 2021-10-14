@@ -3,11 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Miro/AndroidStudioProjects/eSportsBurner/app/src/main/res/layout/activity_game.xml" value="0.13020833333333334" />
-        <entry key="..\:/Users/Miro/AndroidStudioProjects/eSportsBurner/app/src/main/res/layout/activity_game_data.xml" value="0.1" />
+        <entry key="..\:/Users/Miro/AndroidStudioProjects/eSportsBurner/app/src/main/res/layout/activity_game.xml" value="0.3307291666666667" />
+        <entry key="..\:/Users/Miro/AndroidStudioProjects/eSportsBurner/app/src/main/res/layout/activity_game_data.xml" value="0.34556159420289856" />
         <entry key="..\:/Users/Miro/AndroidStudioProjects/eSportsBurner/app/src/main/res/layout/activity_game_list.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/Miro/AndroidStudioProjects/eSportsBurner/app/src/main/res/layout/activity_main.xml" value="0.32708333333333334" />
-        <entry key="..\:/Users/Miro/AndroidStudioProjects/eSportsBurner/app/src/main/res/layout/activity_profiili.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/Miro/AndroidStudioProjects/eSportsBurner/app/src/main/res/layout/activity_profiili.xml" value="0.3307291666666667" />
         <entry key="..\:/Users/Miro/AndroidStudioProjects/eSportsBurner/app/src/main/res/layout/game_item_layout.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/Ville/AndroidStudioProjects/eSportsBurner/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.26666666666666666" />
         <entry key="..\:/Users/Ville/AndroidStudioProjects/eSportsBurner/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26666666666666666" />
@@ -20,8 +20,7 @@
   </component>
   <component name="JavadocGenerationManager">
     <option name="OUTPUT_DIRECTORY" value="$USER_HOME$/Desktop" />
-    <option name="OTHER_OPTIONS" value="-sourcepath C:\Users\Miro\AppData\Local\Android\Sdk\platforms\android-31\android.jar -encoding UTF-8 -charset UTF-8 " />
-    <option name="OPTION_INCLUDE_LIBS" value="true" />
+    <option name="OTHER_OPTIONS" value="-encoding UTF-8 -charset UTF-8 -docencoding UTF-8" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
